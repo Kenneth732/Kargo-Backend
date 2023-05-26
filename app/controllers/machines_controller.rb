@@ -2,7 +2,7 @@ class MachinesController < ApplicationController
 
     def index
         machines = Machine.all 
-        render json machines 
+        render json: machines 
     end
 
     def show
@@ -10,10 +10,10 @@ class MachinesController < ApplicationController
         render json: machine 
     end
 
-    def create
-        machine = Machine.create(machine_params)
-        render json: status: :created
-    end
+    # def create
+    #     machine = Machine.create(machine_params)
+    #     render json: status: :created
+    # end
 
     def update
         machine = Machine.find(params[:id])
@@ -53,4 +53,3 @@ class MachinesController < ApplicationController
         new_price
       end      
 end
-
